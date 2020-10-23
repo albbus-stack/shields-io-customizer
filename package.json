@@ -18,6 +18,8 @@
     },
     "homepage": "https://github.com/albbus-stack/shields-io-customizer#readme",
     "dependencies": {
-        "express": "^4.17.1"
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1"
     }
 }
