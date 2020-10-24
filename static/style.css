@@ -1,0 +1,34 @@
+.select {
+    display: grid;
+}
+
+#myInput {
+    padding: 20px;
+    margin-top: -6px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+}
+
+.fstdiv {
+    margin-top: 1rem;
+}
+
+.d {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.dropdown {
+    box-shadow: 0 0 8px #777;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown.is-open {
+    display: block;
+}

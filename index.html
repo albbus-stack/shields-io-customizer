@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="static/fstdropdown.js"></script>
+    <link rel="stylesheet" href="static/fstdropdown.css">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="columns is-centered is-vcentered">
+            <div class="column is-half p-6">
+                <form>
+                    <input type="text" class="input" placeholder="Label" v-model="lab">
+                    <input type="text" class="input mt-3 halfw" placeholder="Label Color" v-model="labelCol">
+                    <input type="text" class="input mt-3" placeholder="Message" v-model="mes">
+                    <input type="text" class="input mt-3" placeholder="Color" v-model="col">
+                    <input type="text" class="input mt-3" placeholder="Logo" v-model="logo">
+                    <input type="text" class="input mt-3 halfw" placeholder="Logo Color" v-model="logoCol">
+                    <input type="text" class="input mt-3 halfw" placeholder="Logo Width" v-model="logoWid">
+                    <input type="text" class="input mt-3" placeholder="Link" v-model="link">
+                    <select class="fstdropdown-select" v-model="sty">
+                        <option value="">Style</option>
+                        <option value="plastic">Plastic</option>
+                        <option value="flat">Flat</option>
+                        <option value="flat-square">Flat square</option>
+                        <option value="for-the-badge">For the badge</option>
+                    </select>
+                </form>
+            </div>
+            <div class="column is-one-quarter d">
+                <img :src="URL" class="img"></div>
+        </div>
+    </div>
+    <script src="static/index.js" type="application/javascript"></script>
+</body>
+
+</html>
