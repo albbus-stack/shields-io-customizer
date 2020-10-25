@@ -26,6 +26,17 @@ body {
     display: block;
 }
 
+.notification {
+    border-radius: 60px;
+}
+
+@keyframes fade {
+    100% {
+        background-color: transparent;
+        color: transparent;
+    }
+}
+
 .img {
     position: absolute;
     top: 50%;

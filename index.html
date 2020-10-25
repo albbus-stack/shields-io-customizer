@@ -46,7 +46,7 @@
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Hover me</span>
+                        <span>Export</span>
                         <span class="icon is-small">
                           <i class="fas fa-angle-down" aria-hidden="true"></i>
                         </span>
@@ -55,13 +55,13 @@
                     <div class="dropdown-menu" id="dropdown-menu" role="menu">
                         <div class="dropdown-content">
                             <div class="dropdown-item">
-                                <a>Copy .md</a>
+                                <a @click="copyMD()">Copy .md</a>
                             </div>
                             <div class="dropdown-item">
-                                <a>Copy html</a>
+                                <a @click="copyHTML()">Copy html</a>
                             </div>
                             <div class="dropdown-item">
-                                <a>Download .png</a>
+                                <a @click="downloadSVG()">Download .svg</a>
                             </div>
                         </div>
                     </div>
