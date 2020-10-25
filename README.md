@@ -2,7 +2,7 @@
 [![GPLv3 License](https://img.shields.io/badge/%20License-GPL%20v3-yellow?style=flat-square)](https://opensource.org/licenses/)
 [![Vue](https://img.shields.io/badge/-Vue.js-success?style=flat-square)](https://github.com/vuejs/vue)
 
-A simple and fast [shields.io](https://shields.io/) badge customizer, live on https://shields-io-customizer.herokuapp.com/.
+A simple and fast [shields.io](https://shields.io/) badge creator, live on https://shields-io-customizer.herokuapp.com/.
 
 ## Build it
 
