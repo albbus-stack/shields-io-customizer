@@ -15,22 +15,14 @@
 <body>
     <div id="app">
         <div class="columns is-centered grid">
-            <div class="column">
+            <div class="column mb-4">
                 <h2 class="mt-4 has-text-weight-bold is-size-3">Static badge</h2>
             </div>
         </div>
         <div class="columns is-centered is-vcentered">
             <div class="column is-half pt-3 pb-3 pr-6 pl-6">
                 <form>
-                    <input type="text" class="input" placeholder="Label" v-model="lab">
-                    <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol">
-                    <input type="text" class="input mt-3" placeholder="Message" v-model="mes">
-                    <input type="text" class="input mt-3" placeholder="Color" v-model="col">
-                    <input type="text" class="input mt-3" placeholder="Logo" v-model="logo">
-                    <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol">
-                    <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid">
-                    <input type="text" class="input mt-3" placeholder="Link" v-model="link">
-                    <div class="select mt-3 mb-3">
+                    <div class="select mt-3">
                         <select v-model="sty">
                             <option value="">Style</option>
                             <option value="plastic">Plastic</option>
@@ -39,10 +31,42 @@
                             <option value="for-the-badge">For the badge</option>
                         </select>
                     </div>
+                    <input type="text" class="input mt-3" placeholder="Label" v-model="lab">
+                    <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol">
+                    <input type="text" class="input mt-3" placeholder="Message" v-model="mes">
+                    <input type="text" class="input mt-3" placeholder="Color" v-model="col">
+                    <input type="text" class="input mt-3" placeholder="Logo" v-model="logo">
+                    <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol">
+                    <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid">
+                    <input type="text" class="input mt-3 mb-5" placeholder="Link" v-model="link">
                 </form>
             </div>
             <div class="column is-two-fifths pr">
-                <img :src="URL" class="img"></div>
+                <img :src="URL" class="img">
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Hover me</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <a>Copy .md</a>
+                            </div>
+                            <div class="dropdown-item">
+                                <a>Copy html</a>
+                            </div>
+                            <div class="dropdown-item">
+                                <a>Download .png</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="static/index.js" type="application/javascript"></script>
