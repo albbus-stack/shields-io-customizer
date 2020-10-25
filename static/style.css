@@ -1,6 +1,7 @@
 body {
     height: 105vh;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .select {
