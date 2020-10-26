@@ -1,0 +1,106 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+body
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+@media (min-width: 0px) and (max-width: 770px)
+    body
+        height: 130vh;
+        width: 100%;
+        overflow-x: hidden;
+
+h2 
+    color: #43C211;
+
+
+.grid
+    margin-bottom: 6rem !important;
+
+.select 
+    display: grid !important;
+
+
+.d 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+
+.notification 
+    border-radius: 60px;
+
+
+@keyframes fade 
+    100% 
+        background-color: transparent;
+        color: transparent;
+    
+
+
+.logo 
+    margin-top: 3vh;
+    top: 0% !important;
+    transform: translate(-50%, 0%) !important;
+    width: 17rem;
+
+
+.img 
+    max-width: 80% !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+.is-centered 
+    display: grid;
+
+
+.pr 
+    position: relative;
+
+.grid 
+    display: grid !important;
+
+
+.dropdown 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+
+
+.dropdown-menu
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -40%);
+
+.dropdown-content
+    background-color: #2F2F2F !important;
+
+a
+    color: white !important;
+
+a:hover
+    color: #747474 !important;
+
+.select:not(.is-multiple):not(.is-loading)::after
+  border-color: #ccc !important; 
+
+$family-sans-serif: "Nunito", sans-serif;
+$body-background-color: #4C4C4C;
+$input-placeholder-color: #747474;
+$input-color: white;
+$input-background-color: #2F2F2F;
+$input-border-color: transparent;
+$input-radius: 15px;
+$button-background-color: #2F2F2F;
+$button-color: white;
+$button-border-color: transparent;
+@import "bulma-0.9.1/bulma/bulma.sass";
+

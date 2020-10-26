@@ -7,20 +7,19 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/style.min.css">
     <title>Shields.io customizer</title>
 </head>
 
 <body>
     <div id="app">
         <div class="columns is-centered grid">
-            <div class="column mb-4">
-                <h2 class="mt-4 has-text-weight-bold is-size-3">Static badge</h2>
+            <div class="column">
+                <img src="static/logo.png" class="img logo">
             </div>
         </div>
         <div class="columns is-centered is-vcentered">
-            <div class="column is-half pt-3 pb-3 pr-6 pl-6">
+            <div class="column is-half pt-3 pb-3 pr-6 pl-6 mt-4">
                 <form>
                     <div class="select mt-3">
                         <select v-model="sty">
@@ -43,7 +42,7 @@
             </div>
             <div class="column is-two-fifths pr">
                 <img :src="URL" class="img">
-                <div class="dropdown is-hoverable">
+                <div class="dropdown is-hoverable mt-5">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                         <span>Export</span>
@@ -60,6 +59,7 @@
                             <div class="dropdown-item">
                                 <a @click="copyHTML()">Copy html</a>
                             </div>
+                            <hr class="dropdown-divider">
                             <div class="dropdown-item">
                                 <a @click="downloadSVG()">Download .svg</a>
                             </div>
