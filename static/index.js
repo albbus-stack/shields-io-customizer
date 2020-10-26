@@ -155,7 +155,7 @@ var app = new Vue({
                     }
                 }
             } else {
-                let md = '!['.concat(this.lab1, '](', this.URL1, ')')
+                let md = '!['.concat(this.lab1, ' ](', this.URL1, ')')
                 if (window.clipboardData && window.clipboardData.setData) {
                     return clipboardData.setData("Text", md)
                 } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
