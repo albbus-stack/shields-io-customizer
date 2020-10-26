@@ -21,12 +21,14 @@ var app = new Vue({
         link1: "",
         type: "",
         user: "",
-        repo: ""
+        repo: "",
+        gitType: "",
+        profileTheme: ""
     },
     methods: {
         copyMD: function() {
             if (this.link != "") {
-                let md = '[!['.concat(this.lab, '](', this.URL, ')](', 'https://', this.link, ')')
+                let md = '[!['.concat(this.lab, ' ](', this.URL, ')](', 'https://', this.link, ')')
                 if (window.clipboardData && window.clipboardData.setData) {
                     return clipboardData.setData("Text", md)
                 } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
@@ -243,6 +245,18 @@ var app = new Vue({
             return 'https://img.shields.io/static/v1?'.concat('label=', this.lab, '&message=', this.mes,
                 '&color=', this.col, '&style=', this.sty, '&logo=', this.logo, '&logoColor=', this.logoCol,
                 '&logoWidth=', this.logoWid, '&labelColor=', this.labelCol, '&link=', this.link)
+        },
+        URL1: function() {
+            if (this.type === 'github') {
+                if (this.gitType === 'profile') {
+                    return 'https://github-readme-stats.vercel.app/api?'.concat('username=', this.user, '&theme=', this.profileTheme)
+                } else if (this.gitType === 'repoSize') {
+                    return 'https://img.shields.io/github/repo-size/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                }
+                return
+            }
         }
     }
 })
