@@ -91,7 +91,7 @@
                             <option value="">Type</option>
                             <option value="license">License</option>
                             <option value="release">Release</option>
-                            <option value="commits">Commits</option>
+                            <option value="lastCommit">Last commit</option>
                             <option value="forks">Forks</option>
                             <option value="stars">Stars</option>
                             <option value="issues">Issues</option>
@@ -119,7 +119,9 @@
                         </select>
                             </div>
                         </div>
-                        <div v-else-if="gitType === 'repoSize'">
+                        <div v-else-if="gitType === 'repoSize'||gitType === 'pullRequests'||
+                        gitType === 'issues'||gitType === 'stars'||gitType === 'forks'||gitType === 'lastCommit'||gitType === 'release'
+                        ||gitType === 'license'">
                             <div class="select mt-3">
                                 <select v-model="sty1">
                             <option value="">Style</option>

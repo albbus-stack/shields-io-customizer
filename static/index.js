@@ -254,6 +254,34 @@ var app = new Vue({
                     return 'https://img.shields.io/github/repo-size/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
                         '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
                         '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'pullRequests') {
+                    return 'https://img.shields.io/github/issues-pr/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'issues') {
+                    return 'https://img.shields.io/github/issues/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'stars') {
+                    return 'https://img.shields.io/github/stars/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'forks') {
+                    return 'https://img.shields.io/github/stars/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'lastCommit') {
+                    return 'https://img.shields.io/github/last-commit/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'release') {
+                    return 'https://img.shields.io/github/release/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.gitType === 'license') {
+                    return 'https://img.shields.io/github/license/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
                 }
                 return
             }
