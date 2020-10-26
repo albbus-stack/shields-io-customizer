@@ -23,6 +23,7 @@
         <div class="columns is-centered is-vcentered">
             <div class="column is-half pt-3 pb-3 pr-6 pl-6 mt-4">
                 <form>
+                    <label class="label ml-2">Static badge</label>
                     <div class="select mt-3">
                         <select v-model="sty">
                             <option value="">Style</option>
@@ -41,12 +42,12 @@
                     <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol">
                     <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid">
                     <input type="text" class="input mt-3" placeholder="Link" v-model="link">
-                    <p class="help mb-5 ml-2">Insert without https prefix</p>
+                    <p class="help ml-2">Insert without https prefix</p>
                 </form>
             </div>
             <div class="column is-two-fifths pr">
                 <img :src="URL" class="img">
-                <div class="dropdown is-hoverable mt-5">
+                <div class="dropdown is-hoverable mt-5 mb-7">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                         <span>Export</span>
@@ -66,6 +67,135 @@
                             <hr class="dropdown-divider">
                             <div class="dropdown-item">
                                 <a @click="downloadSVG()">Download .svg</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns is-centered is-vcentered">
+            <div class="column is-half pt-3 pb-3 pr-6 pl-6 mt-6">
+                <form>
+                    <label class="label ml-2">Dynamic badge</label>
+                    <div class="select mt-3">
+                        <select v-model="type" @change="resetInputs()">
+                            <option value="">Badge type</option>
+                            <option value="github">Github</option>
+                            <option value="license">License</option>
+                            <option value="dependencies">Dependencies</option>
+                            <option value="social">Social</option>  
+                        </select>
+                    </div>
+                    <div v-if="type === 'github'">
+                        <div class="select mt-3">
+                            <select v-model="sty1">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                        </div>
+                        <input type="text" class="input mt-3" placeholder="Username" v-model="user">
+                        <input type="text" class="input mt-3" placeholder="Repository name" v-model="repo">
+                        <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                        <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                        <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
+                        <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                        <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                        <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                        <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
+                        <p class="help mb-5 ml-2">Insert without https prefix</p>
+                    </div>
+                    <div v-else-if="type === 'license'">
+                        <div class="select mt-3">
+                            <select v-model="sty1">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                        </div>
+                        <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                        <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                        <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
+                        <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                        <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                        <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                        <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
+                        <p class="help mb-5 ml-2">Insert without https prefix</p>
+                    </div>
+                    <div v-if="type === 'dependencies'">
+                        <div class="select mt-3">
+                            <select v-model="sty1">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                        </div>
+                        <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                        <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                        <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
+                        <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                        <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                        <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                        <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
+                        <p class="help mb-5 ml-2">Insert without https prefix</p>
+                    </div>
+                    <div v-if="type === 'social'">
+                        <div class="select mt-3">
+                            <select v-model="sty1">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                        </div>
+                        <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                        <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                        <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
+                        <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                        <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                        <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                        <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
+                        <p class="help mb-5 ml-2">Insert without https prefix</p>
+                    </div>
+                </form>
+            </div>
+            <div class="column is-two-fifths pr">
+                <img :src="URL" class="img">
+                <div class="dropdown dropdown1 is-hoverable mt-5">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Export</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <a @click="copyMD1()">Copy .md</a>
+                            </div>
+                            <div class="dropdown-item">
+                                <a @click="copyHTML1()">Copy html</a>
+                            </div>
+                            <hr class="dropdown-divider">
+                            <div class="dropdown-item">
+                                <a @click="downloadSVG1()">Download .svg</a>
                             </div>
                         </div>
                     </div>

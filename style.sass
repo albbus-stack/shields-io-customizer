@@ -2,20 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 body
-    height: 100vh;
+    height: 200vh;
     width: 100%;
     overflow-x: hidden;
-    overflow-y: hidden;
 
 @media (min-width: 0px) and (max-width: 770px)
     body
-        height: 130vh;
+        height: 230vh;
         width: 100%;
         overflow-x: hidden;
 
 h2 
     color: #43C211;
 
+.label
+    color: #dbdbdb !important; 
 
 .grid
     margin-bottom: 0px !important;
@@ -23,6 +24,8 @@ h2
 .select 
     display: grid !important;
 
+.mb-7
+    margin-bottom: 5rem;
 
 .d 
     margin-left: auto;
@@ -68,6 +71,12 @@ h2
 
 
 .dropdown 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+
+.dropdown1 
     position: absolute;
     top: 50%;
     left: 50%;
