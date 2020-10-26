@@ -127,8 +127,8 @@ var app = new Vue({
                 .catch(() => console.log('Download failed!'))
         },
         copyMD1: function() {
-            if (this.link != "") {
-                let md = '[!['.concat(this.lab, '](', this.URL, ')](', 'https://', this.link, ')')
+            if (this.link1 != "") {
+                let md = '[!['.concat(this.lab1, '](', this.URL1, ')](', 'https://', this.link1, ')')
                 if (window.clipboardData && window.clipboardData.setData) {
                     return clipboardData.setData("Text", md)
                 } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
@@ -155,7 +155,7 @@ var app = new Vue({
                     }
                 }
             } else {
-                let md = '!['.concat(this.lab, '](', this.URL, ')')
+                let md = '!['.concat(this.lab1, '](', this.URL1, ')')
                 if (window.clipboardData && window.clipboardData.setData) {
                     return clipboardData.setData("Text", md)
                 } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
@@ -184,7 +184,7 @@ var app = new Vue({
             }
         },
         copyHTML1: function() {
-            let html = '<img src="'.concat(this.URL, '"', '>')
+            let html = '<img src="'.concat(this.URL1, '"', '>')
             if (window.clipboardData && window.clipboardData.setData) {
                 return clipboardData.setData("Text", html)
             } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
@@ -212,14 +212,14 @@ var app = new Vue({
             }
         },
         downloadSVG1: function() {
-            fetch('https://cors-anywhere.herokuapp.com/' + this.URL)
+            fetch('https://cors-anywhere.herokuapp.com/' + this.URL1)
                 .then(resp => resp.blob())
                 .then(blob => {
                     const url = window.URL.createObjectURL(blob)
                     const a = document.createElement('a')
                     a.style.display = 'none'
                     a.href = url
-                    a.download = 'badge'.concat(this.label ? '-' + this.label : '', '.svg')
+                    a.download = 'badge'.concat(this.label1 ? '-' + this.label1 : '', '.svg')
                     document.body.appendChild(a)
                     a.click()
                     window.URL.revokeObjectURL(url)
