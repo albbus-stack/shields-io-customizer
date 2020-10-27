@@ -102,7 +102,7 @@
                         </div>
                         <div v-if="gitType === ''"></div>
                         <div v-else-if="gitType === 'profile'">
-                            <input type="text" class="input mt-3" placeholder="Username" v-model="user">
+                            <input type="text" class="input mt-3" placeholder="Username*" v-model="user">
                             <div class="select mt-3">
                                 <select v-model="profileTheme">
                             <option value="">Profile style</option>
@@ -132,14 +132,47 @@
                             <option value="social">Social</option>
                         </select>
                             </div>
-                            <input type="text" class="input mt-3" placeholder="Username" v-model="user">
-                            <input type="text" class="input mt-3" placeholder="Repository name" v-model="repo">
+                            <input type="text" class="input mt-3" placeholder="Username*" v-model="user">
+                            <input type="text" class="input mt-3" placeholder="Repository name*" v-model="repo">
                             <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
                             <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
                             <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
                             <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
                             <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
                             <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        </div>
+                    </div>
+                    <div v-if="type === 'dependencies'">
+                        <div class="select mt-3">
+                            <select v-model="depType">
+                            <option value="">Type</option>
+                            <option value="uptodate">Uptodate badge from david</option>
+                            <option value="packagejson">Package.json package version</option>
+                            <option value="python">Pipenv python version</option>
+                        </select>
+                        </div>
+                        <div v-if="depType === ''"></div>
+                        <div v-else-if="depType === 'uptodate'||depType === 'python'">
+                            <div class="select mt-3">
+                                <select v-model="sty1">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                            </div>
+                            <input type="text" class="input mt-3" placeholder="Username*" v-model="user">
+                            <input type="text" class="input mt-3" placeholder="Repository name*" v-model="repo">
+                            <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                            <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                            <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                            <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                            <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                            <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                            <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
+                            <p class="help mb-5 ml-2">Insert without https prefix</p>
                         </div>
                         <div v-else>
                             <div class="select mt-3">
@@ -152,11 +185,11 @@
                             <option value="social">Social</option>
                         </select>
                             </div>
-                            <input type="text" class="input mt-3" placeholder="Username" v-model="user">
-                            <input type="text" class="input mt-3" placeholder="Repository name" v-model="repo">
+                            <input type="text" class="input mt-3" placeholder="Username*" v-model="user">
+                            <input type="text" class="input mt-3" placeholder="Repository name*" v-model="repo">
+                            <input type="text" class="input mt-3" placeholder="Package name*" v-model="packageName">
                             <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
                             <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
-                            <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
                             <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
                             <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
                             <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
@@ -165,30 +198,20 @@
                             <p class="help mb-5 ml-2">Insert without https prefix</p>
                         </div>
                     </div>
-                    <div v-if="type === 'dependencies'">
-                        <div class="select mt-3">
-                            <select v-model="sty1">
-                            <option value="">Style</option>
-                            <option value="plastic">Plastic</option>
-                            <option value="flat">Flat</option>
-                            <option value="flat-square">Flat square</option>
-                            <option value="for-the-badge">For the badge</option>
-                            <option value="social">Social</option>
-                        </select>
-                        </div>
-                        <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
-                        <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
-                        <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
-                        <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
-                        <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
-                        <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
-                        <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
-                        <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
-                        <p class="help mb-5 ml-2">Insert without https prefix</p>
-                    </div>
                     <div v-if="type === 'social'">
                         <div class="select mt-3">
-                            <select v-model="sty1">
+                            <select v-model="socType">
+                            <option value="">Type</option>
+                            <option value="github">Github followers</option>
+                            <option value="reddit">Subscribe to subreddit</option>
+                            <option value="twitter">Twitter follow</option>
+                            <option value="youtube">Youtube video votes</option>
+                        </select>
+                        </div>
+                        <div v-if="socType === ''"></div>
+                        <div v-else-if="socType === 'github'||socType === 'twitter'">
+                            <div class="select mt-3">
+                                <select v-model="sty2">
                             <option value="">Style</option>
                             <option value="plastic">Plastic</option>
                             <option value="flat">Flat</option>
@@ -196,22 +219,59 @@
                             <option value="for-the-badge">For the badge</option>
                             <option value="social">Social</option>
                         </select>
+                            </div>
+                            <input type="text" class="input mt-3" placeholder="Username*" v-model="user">
+                            <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                            <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                            <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                            <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                            <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                            <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
                         </div>
-                        <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
-                        <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
-                        <input type="text" class="input mt-3" placeholder="Message" v-model="mes1">
-                        <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
-                        <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
-                        <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
-                        <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
-                        <input type="text" class="input mt-3" placeholder="Link" v-model="link1">
-                        <p class="help mb-5 ml-2">Insert without https prefix</p>
+                        <div v-else-if="socType === 'youtube'">
+                            <div class="select mt-3">
+                                <select v-model="sty2">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                            </div>
+                            <input type="text" class="input mt-3" placeholder="Video ID*" v-model="videoid">
+                            <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                            <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                            <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                            <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                            <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                            <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        </div>
+                        <div v-else>
+                            <div class="select mt-3">
+                                <select v-model="sty2">
+                            <option value="">Style</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat square</option>
+                            <option value="for-the-badge">For the badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                            </div>
+                            <input type="text" class="input mt-3" placeholder="Subreddit*" v-model="subreddit">
+                            <input type="text" class="input mt-3" placeholder="Label" v-model="lab1">
+                            <input type="text" class="input mt-3" placeholder="Label Color" v-model="labelCol1">
+                            <input type="text" class="input mt-3" placeholder="Color" v-model="col1">
+                            <input type="text" class="input mt-3" placeholder="Logo" v-model="logo1">
+                            <input type="text" class="input mt-3" placeholder="Logo Color" v-model="logoCol1">
+                            <input type="text" class="input mt-3" placeholder="Logo Width" v-model="logoWid1">
+                        </div>
                     </div>
                 </form>
             </div>
             <div class="column is-two-fifths pr">
-                <img :src="URL1" class="img mt-6">
                 <div v-if="gitType === 'profile'">
+                    <img :src="URL1" class="img mt-6">
                     <div class="dropdown dropdown2 is-hoverable mt-8">
                         <div class="dropdown-trigger">
                             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -238,6 +298,7 @@
                     </div>
                 </div>
                 <div v-else>
+                    <img :src="URL1" class="img">
                     <div class="dropdown dropdown1 is-hoverable mt-5">
                         <div class="dropdown-trigger">
                             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">

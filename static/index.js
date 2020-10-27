@@ -23,7 +23,13 @@ var app = new Vue({
         user: "",
         repo: "",
         gitType: "",
-        profileTheme: ""
+        profileTheme: "",
+        packageName: "",
+        depType: "",
+        socType: "",
+        subreddit: "",
+        videoid: "",
+        sty2: "social"
     },
     methods: {
         copyMD: function() {
@@ -283,7 +289,38 @@ var app = new Vue({
                         '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
                         '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
                 }
-                return
+            } else if (this.type === 'dependencies') {
+                if (this.depType === 'uptodate') {
+                    return 'https://img.shields.io/david/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.depType === 'python') {
+                    return 'https://img.shields.io/github/pipenv/locked/python-version/'.concat(this.user, '/', this.repo, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.depType === 'packagejson') {
+                    return 'https://img.shields.io/github/package-json/dependency-version/'.concat(this.user, '/', this.repo, '/', this.packageName, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty1, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                }
+            } else if (this.type === 'social') {
+                if (this.socType === 'github') {
+                    return 'https://img.shields.io/github/followers/'.concat(this.user, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty2, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.socType === 'reddit') {
+                    return 'https://img.shields.io/reddit/subreddit-subscribers/'.concat(this.subreddit, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty2, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.socType === 'twitter') {
+                    return 'https://img.shields.io/twitter/follow/'.concat(this.user, '?', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty2, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                } else if (this.socType === 'youtube') {
+                    return 'https://img.shields.io/youtube/likes/'.concat(this.videoid, '?withDislikes&', 'label=', this.lab1,
+                        '&color=', this.col1, '&style=', this.sty2, '&logo=', this.logo1, '&logoColor=', this.logoCol1,
+                        '&logoWidth=', this.logoWid1, '&labelColor=', this.labelCol1)
+                }
             }
         }
     }
