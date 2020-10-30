@@ -125,7 +125,7 @@ var app = new Vue({
                     const a = document.createElement('a')
                     a.style.display = 'none'
                     a.href = url
-                    a.download = 'badge'.concat(this.label ? '-' + this.label : '', '.svg')
+                    a.download = 'badge'.concat('-', this.label, '.svg')
                     document.body.appendChild(a)
                     a.click()
                     window.URL.revokeObjectURL(url)
@@ -225,7 +225,7 @@ var app = new Vue({
                     const a = document.createElement('a')
                     a.style.display = 'none'
                     a.href = url
-                    a.download = 'badge'.concat(this.label1 ? '-' + this.label1 : '', '.svg')
+                    a.download = 'badge'.concat('-', this.label1, '.svg')
                     document.body.appendChild(a)
                     a.click()
                     window.URL.revokeObjectURL(url)
