@@ -118,7 +118,7 @@ var app = new Vue({
             }
         },
         downloadSVG: function() {
-            fetch('https://thingproxy.freeboard.io/fetch/' + this.URL)
+            fetch('https://cors-anywhere.herokuapp.com/' + this.URL)
                 .then(resp => resp.blob())
                 .then(blob => {
                     const url = window.URL.createObjectURL(blob)
@@ -222,7 +222,7 @@ var app = new Vue({
             }
         },
         downloadSVG1: function() {
-            fetch('https://thingproxy.freeboard.io/fetch/' + this.URL1)
+            fetch('https://cors-anywhere.herokuapp.com/' + this.URL1)
                 .then(resp => resp.blob())
                 .then(blob => {
                     const url = window.URL.createObjectURL(blob)
