@@ -13,6 +13,8 @@ A simple and fast [shields.io](https://shields.io/) badge creator made using vue
 
 * Express.js
 
+* Bulma
+
 ###### Steps
 
 1. Pull this repository.
