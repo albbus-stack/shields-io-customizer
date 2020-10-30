@@ -1,5 +1,5 @@
 # shields-io-customizer
-[![GPLv3 License](https://img.shields.io/badge/%20License-GPL%20v3-yellow?style=flat-square)](https://opensource.org/licenses/)
+[![GPLv3 License](https://img.shields.io/badge/%20License-GPL%20v3-yellow?style=flat-square&labelColor=black)](https://opensource.org/licenses/)
 [![Vue](https://img.shields.io/badge/-Vue.js-success?style=flat-square)](https://github.com/vuejs/vue)
 [![Commited](https://img.shields.io/github/last-commit/albbus-stack/shields-io-customizer?label=Commited&color=42c5f5&style=flat-square&logo=heroku&logoColor=42c5f5&logoWidth=17&labelColor=black)](https://github.com/albbus-stack/shields-io-customizer/commits)
 
