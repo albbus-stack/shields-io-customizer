@@ -52,11 +52,11 @@ var app = new Vue({
                         var notification = document.createElement("div")
                         notification.className = "notification is-primary img is-size-6"
                         notification.innerHTML = "Badge copied in .md format"
-                        notification.style.animation = "fade 2s ease-in 1s"
+                        notification.style.animation = "fade 1.5s ease-in .5s"
                         document.body.appendChild(notification)
                         setTimeout(function() {
                             document.body.removeChild(notification)
-                        }, 3000)
+                        }, 2000)
                         document.body.removeChild(textarea)
                     }
                 }
@@ -79,11 +79,11 @@ var app = new Vue({
                         var notification = document.createElement("div")
                         notification.className = "notification is-primary img is-size-6"
                         notification.innerHTML = "Badge copied in .md format"
-                        notification.style.animation = "fade 2s ease-in 1s"
+                        notification.style.animation = "fade 1.5s ease-in .5s"
                         document.body.appendChild(notification)
                         setTimeout(function() {
                             document.body.removeChild(notification)
-                        }, 3000)
+                        }, 2000)
                         document.body.removeChild(textarea)
                     }
                 }
@@ -108,11 +108,11 @@ var app = new Vue({
                     var notification = document.createElement("div")
                     notification.className = "notification is-primary img is-size-6"
                     notification.innerHTML = "Badge copied in html format"
-                    notification.style.animation = "fade 2s ease-in 1s"
+                    notification.style.animation = "fade 1.5s ease-in .5s"
                     document.body.appendChild(notification)
                     setTimeout(function() {
                         document.body.removeChild(notification)
-                    }, 3000)
+                    }, 2000)
                     document.body.removeChild(textarea)
                 }
             }
@@ -152,11 +152,11 @@ var app = new Vue({
                         var notification = document.createElement("div")
                         notification.className = "notification is-primary img is-size-6"
                         notification.innerHTML = "Badge copied in .md format"
-                        notification.style.animation = "fade 2s ease-in 1s"
+                        notification.style.animation = "fade 1.5s ease-in .5s"
                         document.body.appendChild(notification)
                         setTimeout(function() {
                             document.body.removeChild(notification)
-                        }, 3000)
+                        }, 2000)
                         document.body.removeChild(textarea)
                     }
                 }
@@ -179,11 +179,11 @@ var app = new Vue({
                         var notification = document.createElement("div")
                         notification.className = "notification is-primary img is-size-6"
                         notification.innerHTML = "Badge copied in .md format"
-                        notification.style.animation = "fade 2s ease-in 1s"
+                        notification.style.animation = "fade 1.5s ease-in .5s"
                         document.body.appendChild(notification)
                         setTimeout(function() {
                             document.body.removeChild(notification)
-                        }, 3000)
+                        }, 2000)
                         document.body.removeChild(textarea)
                     }
                 }
@@ -208,11 +208,11 @@ var app = new Vue({
                     var notification = document.createElement("div")
                     notification.className = "notification is-primary img is-size-6"
                     notification.innerHTML = "Badge copied in html format"
-                    notification.style.animation = "fade 2s ease-in 1s"
+                    notification.style.animation = "fade 1.5s ease-in .5s"
                     document.body.appendChild(notification)
                     setTimeout(function() {
                         document.body.removeChild(notification)
-                    }, 3000)
+                    }, 2000)
                     document.body.removeChild(textarea)
                 }
             }
