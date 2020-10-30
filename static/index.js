@@ -118,14 +118,18 @@ var app = new Vue({
             }
         },
         downloadSVG: function() {
-            fetch('https://cors-anywhere.herokuapp.com/' + this.URL)
+            fetch('https://thingproxy.freeboard.io/fetch/' + this.URL)
                 .then(resp => resp.blob())
                 .then(blob => {
                     const url = window.URL.createObjectURL(blob)
                     const a = document.createElement('a')
                     a.style.display = 'none'
                     a.href = url
-                    a.download = 'badge'.concat('-', this.label, '.svg')
+                    if (this.lab != "") {
+                        a.download = 'badge'.concat('-', this.lab, '.svg')
+                    } else {
+                        a.download = 'badge'.concat('.svg')
+                    }
                     document.body.appendChild(a)
                     a.click()
                     window.URL.revokeObjectURL(url)
@@ -218,14 +222,18 @@ var app = new Vue({
             }
         },
         downloadSVG1: function() {
-            fetch('https://cors-anywhere.herokuapp.com/' + this.URL1)
+            fetch('https://thingproxy.freeboard.io/fetch/' + this.URL1)
                 .then(resp => resp.blob())
                 .then(blob => {
                     const url = window.URL.createObjectURL(blob)
                     const a = document.createElement('a')
                     a.style.display = 'none'
                     a.href = url
-                    a.download = 'badge'.concat('-', this.label1, '.svg')
+                    if (this.lab1 != "") {
+                        a.download = 'badge'.concat('-', this.lab1, '.svg')
+                    } else {
+                        a.download = 'badge'.concat('.svg')
+                    }
                     document.body.appendChild(a)
                     a.click()
                     window.URL.revokeObjectURL(url)
